@@ -1,0 +1,8 @@
+{% assign p = include.p %}<li class="pub" data-tags="{{ p.type }} {{ p.tags | join: ' ' }}{% if p.code and p.code != '' %} code{% endif %}">
+  <span class="yr">{{ p.year }}</span>
+  <div class="txt">
+    <span class="t">{{ p.title }}</span><br>
+    <span class="meta">{{ p.authors | replace: "A. I. Arif", "<b>A. I. Arif</b>" | replace: "A. Arif", "<b>A. Arif</b>" }}. <i>{{ p.venue }}</i>{% if p.details != "" %}, {{ p.details }}{% endif %}.</span>
+    <span class="links">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">DOI</a>{% endif %}{% if p.code and p.code != "" %} · <a href="{{ p.code }}">Code</a>{% endif %}{% if p.pdf and p.pdf != "" %} · <a href="{{ p.pdf }}">PDF</a>{% endif %}</span>
+  </div>
+</li>

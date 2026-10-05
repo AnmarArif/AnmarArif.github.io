@@ -1,0 +1,33 @@
+---
+layout: default
+title: Publications
+nav: publications
+permalink: /publications/
+---
+<main class="wrap">
+  <div class="page-head">
+    <h1 class="page-title">Publications</h1>
+    <a class="btn ghost" href="{{ site.links.scholar }}">Google Scholar profile</a>
+  </div>
+  <div class="chips" role="group" aria-label="Filter publications by topic" data-filter-for="#pub-list">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+    <button class="chip" type="button" data-filter="railway" aria-pressed="false">Railway</button>
+    <button class="chip" type="button" data-filter="renewables" aria-pressed="false">Renewables</button>
+    <button class="chip" type="button" data-filter="resilience" aria-pressed="false">Resilience</button>
+    <button class="chip" type="button" data-filter="transportation" aria-pressed="false">Transportation</button>
+    <button class="chip" type="button" data-filter="ev" aria-pressed="false">Electric vehicles</button>
+    <button class="chip" type="button" data-filter="code" aria-pressed="false">With code</button>
+  </div>
+  <div id="pub-list" class="stack" style="margin-top:24px">
+    {% assign groups = "journal:Journal articles,conference:Conference papers" | split: "," %}
+    {% for g in groups %}{% assign gp = g | split: ":" %}
+    <section class="card" data-group>
+      <h2>{{ gp[1] }}</h2>
+      <ul class="pubs">
+        {% assign list = site.data.publications | where: "type", gp[0] %}
+        {% for p in list %}{% include pub.html p=p %}{% endfor %}
+      </ul>
+    </section>
+    {% endfor %}
+  </div>
+</main>

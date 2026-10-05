@@ -1,0 +1,97 @@
+---
+layout: default
+nav: teaching
+---
+{% assign c = site.data.courses | where: "id", page.course | first %}
+{% assign prof = site.data.profile %}
+<section class="course-hero">
+  <div class="bar">
+    <div class="crumbs"><a href="{{ '/teaching/' | relative_url }}">Teaching</a> / {{ c.code }}</div>
+    <div class="code">{{ c.code }}{% if c.term != "" %} · {{ c.term }}{% endif %}{% if c.new %} <span class="badge">New course</span>{% endif %}</div>
+    <h1>{{ c.title }}</h1>
+    <p>{{ c.summary }}</p>
+    <div class="btn-row">
+      <a class="btn" href="{{ site.links.lms }}">Slides and grades on LMS</a>
+      {% if c.classroom != "" %}<a class="btn ghost" href="{{ c.classroom }}">Assignments on GitHub Classroom</a>{% endif %}
+      {% if c.syllabus != "" %}<a class="btn ghost" href="{{ c.syllabus | relative_url }}">Syllabus (PDF)</a>{% endif %}
+      {% if c.code_repo != "" %}<a class="btn ghost" href="{{ c.code_repo }}">Course code</a>{% endif %}
+    </div>
+  </div>
+</section>
+
+<main class="wrap two-col">
+  <div class="main" style="gap:24px">
+    <section class="card">
+      <h2>Announcements</h2>
+      {% assign anns = site.data.announcements | where: "course", c.id %}
+      {% assign pinned = anns | where: "pinned", true %}
+      {% for a in pinned %}{% include announcement.html a=a pin=true %}{% endfor %}
+      {% for a in anns %}{% unless a.pinned %}{% include announcement.html a=a %}{% endunless %}{% endfor %}
+      {% if anns.size == 0 %}<p class="empty">No announcements yet.</p>{% endif %}
+    </section>
+
+    {% if c.schedule.size > 0 %}
+    <section class="card">
+      <h2>Schedule</h2>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Week</th><th>Topic</th><th>Public material</th><th>Due</th></tr></thead>
+          <tbody>
+          {% for w in c.schedule %}
+            <tr><td>{{ w.week }}</td><td>{{ w.topic }}</td>
+            <td>{% if w.material.size > 0 %}{% for m in w.material %}<a href="{{ m.url | relative_url }}">{{ m.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}{% else %}<span class="muted">Slides on LMS</span>{% endif %}</td>
+            <td>{{ w.due }}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </section>
+    {% endif %}
+
+    {% if c.coding %}
+    <section class="card">
+      <h2>How homework works</h2>
+      <div class="boxes">
+        <div class="box">
+          <strong style="margin:0">Coding homework</strong>
+          <ol class="steps">
+            <li>Open the assignment link. GitHub creates your private copy.</li>
+            <li>Write your code in the notebook or the Python file.</li>
+            <li>Push your work. Tests run and show your score within minutes.</li>
+            <li>Push again as often as you like before the deadline.</li>
+          </ol>
+        </div>
+        <div class="box">
+          <strong style="margin:0">Written homework</strong>
+          <ol class="steps">
+            <li>Download the problem set from this page or LMS.</li>
+            <li>Submit your answers as a PDF on LMS.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    {% assign body = content | strip %}
+    {% if body != "" %}
+    <section class="card prose-card">
+      {{ content }}
+    </section>
+    {% endif %}
+  </div>
+
+  <aside class="side">
+    {% if c.class_times != "" %}<div class="card tight"><div class="eyebrow">Class</div><p style="margin:6px 0 0">{{ c.class_times }}</p></div>{% endif %}
+    <div class="hours">
+      <div class="eyebrow">Office hours</div>
+      <dl>{% for h in prof.office_hours %}<div><dt>{{ h.days }}</dt><dd>{{ h.time }}</dd></div>{% endfor %}</dl>
+      <p>{{ prof.office }}<br>{{ prof.office_hours_note }}</p>
+    </div>
+    {% if c.grading.size > 0 %}
+    <div class="card tight"><div class="eyebrow">Grading</div>
+      <div class="kv" style="margin-top:8px">{% for g in c.grading %}<div><span>{{ g.item }}</span><span>{{ g.weight }}</span></div>{% endfor %}</div>
+    </div>
+    {% endif %}
+    <div class="card tight"><div class="eyebrow">Contact</div><p style="margin:6px 0 0"><a href="mailto:{{ site.email }}">{{ site.email }}</a><br><span class="small muted">Please include the course code in the subject.</span></p></div>
+  </aside>
+</main>

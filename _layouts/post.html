@@ -1,0 +1,12 @@
+---
+layout: default
+nav: learn
+---
+<main class="wrap">
+  <article class="card article">
+    <div class="crumbs"><a href="{{ '/learn/' | relative_url }}">Learn</a></div>
+    <h1>{{ page.title }}</h1>
+    <p class="small muted">{{ page.date | date: "%B %-d, %Y" }}{% if page.colab %} · <a href="{{ page.colab }}">Open in Colab</a>{% endif %}</p>
+    {{ content }}
+  </article>
+</main>

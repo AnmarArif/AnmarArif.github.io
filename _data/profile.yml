@@ -1,0 +1,12 @@
+# Edit this file to change your office hours and contact details.
+position: Assistant Professor
+department: Department of Electrical Engineering
+university: King Saud University, Riyadh
+office: Office 2 C 26
+
+office_hours:
+  - days: Sunday to Thursday
+    time: 8:00 to 9:00 AM
+  - days: Sunday and Tuesday
+    time: 10:00 AM to 12:00 PM
+office_hours_note: Other times by appointment

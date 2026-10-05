@@ -1,0 +1,5 @@
+{% assign a = include.a %}{% assign c = site.data.courses | where: "id", a.course | first %}<div class="ann{% if include.pin and a.pinned %} pinned{% endif %}" data-tags="{{ a.course }}">
+  {% if include.show_course %}<span class="c">{{ c.code }}</span>{% endif %}
+  <div class="b"><strong>{{ a.title }}</strong>{% if a.body %}<p>{{ a.body }}</p>{% endif %}</div>
+  <span class="d">{{ a.date | date: "%b %-d" }}</span>
+</div>

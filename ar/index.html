@@ -1,0 +1,55 @@
+---
+layout: default
+title: الصفحة الرئيسية
+lang: ar
+text_dir: rtl
+---
+{% assign prof = site.data.profile %}
+<style>
+  [dir="rtl"] body, [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { font-family: "IBM Plex Sans Arabic", var(--sans); }
+  [dir="rtl"] .side { max-width: 320px; }
+</style>
+<main class="wrap two-col">
+  <aside class="side">
+    <div class="card tight profile">
+      <img src="{{ '/assets/img/anmar.jpg' | relative_url }}" alt="د. أنمار عارف" width="600" height="604">
+      <h1>د. أنمار إبراهيم عارف</h1>
+      <p class="role">أستاذ مساعد<br>قسم الهندسة الكهربائية<br>جامعة الملك سعود، الرياض</p>
+      <a href="mailto:{{ site.email }}" dir="ltr">{{ site.email }}</a>
+      <a class="btn" href="{{ '/' | relative_url }}" lang="en">English site</a>
+    </div>
+    <div class="hours">
+      <div class="eyebrow">الساعات المكتبية</div>
+      <dl>
+        <div><dt>من الأحد إلى الخميس</dt><dd>٨:٠٠ إلى ٩:٠٠ صباحًا</dd></div>
+        <div><dt>الأحد والثلاثاء</dt><dd>١٠:٠٠ صباحًا إلى ١٢:٠٠ ظهرًا</dd></div>
+      </dl>
+      <p>مكتب <bdi dir="ltr">2 C 26</bdi><br>أو بموعد مسبق عبر البريد الإلكتروني</p>
+    </div>
+  </aside>
+
+  <div class="main">
+    <section class="card">
+      <h2>نبذة</h2>
+      <p class="prose">أستاذ مساعد في قسم الهندسة الكهربائية بجامعة الملك سعود. يجمع عملي بين أنظمة القوى الكهربائية وبحوث العمليات. وينصب اهتمامي الرئيسي حاليًا على أنظمة تغذية السكك الحديدية والمترو الكهربائية. حصلت على الدكتوراه من جامعة ولاية آيوا، والماجستير من جامعة ولاية أريزونا، والبكالوريوس بمرتبة الشرف الأولى من جامعة الملك سعود.</p>
+    </section>
+
+    <section class="card">
+      <h2>المقررات</h2>
+      <div class="course-tiles">
+        {% for c in site.data.courses %}
+        <a class="course-tile" href="{{ '/teaching/' | append: c.id | append: '/' | relative_url }}">
+          <span class="code" dir="ltr">{{ c.code }}</span>{% if c.new %} <span class="badge">جديد</span>{% endif %}
+          <span class="name" lang="en" dir="ltr" style="text-align:right">{{ c.title }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      <p class="small muted" style="margin:0">الشرائح الكاملة والدرجات متاحة للطلاب المسجلين على <a href="{{ site.links.lms }}">نظام إدارة التعلم (LMS)</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>الطلاب الراغبون في الدراسات العليا</h2>
+      <p class="prose">أرحب بالطلاب المهتمين بأنظمة القوى الكهربائية والأمثلية وأنظمة تغذية السكك الحديدية. يرجى إرسال السيرة الذاتية مع نبذة قصيرة عن اهتماماتك عبر البريد الإلكتروني.</p>
+    </section>
+  </div>
+</main>

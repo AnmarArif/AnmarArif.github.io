@@ -1,0 +1,23 @@
+# Student research. No names by default (KSU and NCA guidance).
+# Add a name ONLY after the student gives written permission (keep their email).
+#
+# level: phd, ms, exec_ms, project (EE 496/497), alumni
+# image: optional figure, e.g. /assets/img/students/phd1.png
+# links: optional, e.g. [{label: Paper, url: https://doi.org/...}]
+#
+# Example (remove the # signs to use):
+# - level: phd
+#   since: 2025
+#   topic: Power supply planning for metro networks
+#   blurb: One or two sentences, nothing unpublished.
+#   name: ""          # leave empty unless they agreed
+#   image: ""
+#   links: []
+
+counts:
+  phd: ""        # e.g. 2
+  ms: ""
+  exec_ms: ""
+  project: ""
+
+entries: []

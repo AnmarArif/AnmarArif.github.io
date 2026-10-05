@@ -1,0 +1,50 @@
+# One entry per course. The course page reads everything from here.
+# Leave a field empty ("") to hide it on the page.
+
+- id: ee484
+  code: EE 484
+  title: Optimization for Electrical Engineering
+  new: true
+  term: ""            # e.g. "Second semester 2026/2027"
+  summary: >-
+    Formulating and solving optimization problems that appear in electrical engineering.
+    Linear, integer and nonlinear programming, with hands-on coding in Python.
+  class_times: ""     # e.g. "Sun, Tue, Thu 8:00 to 8:50 AM, room 2A 54"
+  syllabus: ""        # e.g. /assets/files/EE484_syllabus.pdf
+  classroom: ""       # GitHub Classroom link for the current assignment list
+  code_repo: ""       # public repository with course notebooks
+  coding: true        # shows the "How homework works" section
+  grading: []         # e.g. - {item: Coding homework, weight: 25%}
+  schedule: []        # e.g. - {week: 1, topic: Modelling with optimization, material: [{label: Notes, url: ...}], due: ""}
+
+- id: ee202
+  code: EE 202
+  title: Electric Circuits
+  new: false
+  term: ""
+  summary: >-
+    Frequency response of RLC circuits and selective circuits, and the analysis of
+    circuits in the frequency domain.
+  class_times: ""
+  syllabus: ""
+  classroom: ""
+  code_repo: ""
+  coding: false
+  grading: []
+  schedule: []
+
+- id: ee201
+  code: EE 201
+  title: Fundamentals of Electric Circuits
+  new: false
+  term: ""
+  summary: >-
+    Introduction to DC and AC circuits. Kirchhoff's voltage and current laws, series and
+    parallel circuits, and the basic circuit theorems.
+  class_times: ""
+  syllabus: ""
+  classroom: ""
+  code_repo: ""
+  coding: false
+  grading: []
+  schedule: []

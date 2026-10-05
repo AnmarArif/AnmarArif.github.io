@@ -1,0 +1,23 @@
+---
+layout: default
+title: Teaching
+nav: teaching
+---
+<main class="wrap">
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Teaching</h1>
+      <p class="lede">Public course pages with announcements, selected notes and homework links. Full slides and grades for registered students are on LMS.</p>
+    </div>
+    <a class="btn ghost" href="{{ site.links.lms }}">Go to LMS</a>
+  </div>
+  <div class="stack">
+    {% for c in site.data.courses %}
+    <a class="card" href="{{ '/teaching/' | append: c.id | append: '/' | relative_url }}" style="color:inherit;display:block">
+      <span class="mono" style="color:var(--accent)">{{ c.code }}</span>{% if c.new %} <span class="badge">New</span>{% endif %}
+      <h2 style="margin:4px 0 6px;font-size:24px">{{ c.title }}</h2>
+      <p class="muted" style="margin:0">{{ c.summary }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</main>

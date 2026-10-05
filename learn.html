@@ -1,0 +1,43 @@
+---
+layout: default
+title: Learn
+nav: learn
+permalink: /learn/
+---
+<main class="wrap">
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Learn</h1>
+      <p class="lede">Short videos and tutorials with code on power systems and optimization.</p>
+    </div>
+    {% if site.links.youtube != "" %}<a class="btn ghost" href="{{ site.links.youtube }}">YouTube channel</a>{% endif %}
+  </div>
+
+  <div class="stack">
+    <section class="card">
+      <h2>Videos</h2>
+      {% if site.data.videos.size > 0 %}
+      <div class="work-grid">
+        {% for v in site.data.videos %}
+        <div>
+          <iframe class="video" src="https://www.youtube-nocookie.com/embed/{{ v.youtube_id }}" title="{{ v.title }}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <strong style="display:block;margin-top:8px">{{ v.title }}</strong>
+          <span class="small muted">{{ v.length }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}<p class="empty">Videos are coming soon.</p>{% endif %}
+    </section>
+
+    <section class="card">
+      <h2>Articles and code</h2>
+      {% if site.posts.size > 0 %}
+      <div class="article-list">
+        {% for post in site.posts %}
+        <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br><span class="small muted">{{ post.date | date: "%B %-d, %Y" }}{% if post.description %} · {{ post.description }}{% endif %}</span></div>
+        {% endfor %}
+      </div>
+      {% else %}<p class="empty">Articles are coming soon.</p>{% endif %}
+    </section>
+  </div>
+</main>

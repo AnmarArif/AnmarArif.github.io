@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang }}" dir="{{ page.text_dir | default: "ltr" }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title }}">
+<meta property="og:description" content="{{ page.description | default: site.description }}">
+<meta property="og:image" content="{{ '/assets/img/anmar.jpg' | absolute_url }}">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="{{ '/' | relative_url }}">Anmar Arif</a>
+    <nav class="nav" aria-label="Main">
+      {% assign items = "research:Research:/#research,publications:Publications:/publications/,teaching:Teaching:/teaching/,students:Students:/students/,learn:Learn:/learn/,cv:CV:/cv/" | split: "," %}
+      {% for it in items %}{% assign p = it | split: ":" %}
+      <a href="{{ p[2] | relative_url }}"{% if page.nav == p[0] %} aria-current="page"{% endif %}>{{ p[1] }}</a>
+      {% endfor %}
+      <a class="lang" href="{{ '/ar/' | relative_url }}" lang="ar">العربية</a>
+    </nav>
+  </div>
+</header>
+<div id="content">
+{{ content }}
+</div>
+<footer class="site-footer">
+  <div class="bar">
+    <span>Anmar Arif · Department of Electrical Engineering · King Saud University · <a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+    <span>Last updated {{ site.time | date: "%B %Y" }}</span>
+  </div>
+</footer>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

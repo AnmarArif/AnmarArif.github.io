@@ -1,0 +1,54 @@
+---
+layout: default
+title: Student research
+nav: students
+permalink: /students/
+---
+{% assign s = site.data.students %}
+{% assign levels = "phd:PhD,ms:MS,exec_ms:Executive MS,project:EE 496 / 497,alumni:Alumni" | split: "," %}
+<main class="wrap">
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Student research</h1>
+      <p class="lede">Work by the graduate students and undergraduate project teams I supervise at King Saud University. Names appear only with the student's permission.</p>
+    </div>
+  </div>
+
+  {% if s.counts.phd != "" or s.counts.ms != "" %}
+  <div class="counts" style="margin-bottom:24px">
+    {% if s.counts.phd != "" %}<div><b>{{ s.counts.phd }}</b>PhD</div>{% endif %}
+    {% if s.counts.ms != "" %}<div><b>{{ s.counts.ms }}</b>MS</div>{% endif %}
+    {% if s.counts.exec_ms != "" %}<div><b>{{ s.counts.exec_ms }}</b>Executive MS</div>{% endif %}
+    {% if s.counts.project != "" %}<div><b>{{ s.counts.project }}</b>EE 496 / 497 teams</div>{% endif %}
+  </div>
+  {% endif %}
+
+  {% if s.entries.size > 0 %}
+  <div class="chips" role="group" aria-label="Filter by level" data-filter-for="#work">
+    <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+    {% for l in levels %}{% assign lp = l | split: ":" %}{% assign n = s.entries | where: "level", lp[0] %}{% if n.size > 0 %}<button class="chip" type="button" data-filter="{{ lp[0] }}" aria-pressed="false">{{ lp[1] }}</button>{% endif %}{% endfor %}
+  </div>
+  <div id="work" class="work-grid" style="margin-top:20px">
+    {% for e in s.entries %}{% assign lv = levels | where_exp: "x", "x contains e.level" | first | split: ":" %}
+    <article class="work" data-tags="{{ e.level }}">
+      <div class="ph">{% if e.image and e.image != "" %}<img src="{{ e.image | relative_url }}" alt="">{% endif %}</div>
+      <div class="body">
+        <div class="lvl">{{ lv[1] }}{% if e.since %} · since {{ e.since }}{% endif %}</div>
+        <strong>{{ e.topic }}</strong>
+        {% if e.name and e.name != "" %}<div class="small muted">{{ e.name }}</div>{% endif %}
+        {% if e.blurb %}<p class="small muted" style="margin:6px 0 0">{{ e.blurb }}</p>{% endif %}
+        {% if e.links.size > 0 %}<p class="small" style="margin:8px 0 0">{% for k in e.links %}<a href="{{ k.url }}">{{ k.label }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="card"><p style="margin:0">I supervise PhD, MS and Executive MS students, and undergraduate graduation projects (EE 496 and EE 497). Highlights from their published work will appear here.</p></div>
+  {% endif %}
+
+  <section class="card" style="margin-top:24px;background:var(--accent-soft)">
+    <h2 style="font-size:22px">Prospective students</h2>
+    <p class="prose">I welcome students interested in power systems, optimization and railway power supply. Please email me your CV and a short note on your interests.</p>
+    <a class="btn" href="mailto:{{ site.email }}">Email me</a>
+  </section>
+</main>

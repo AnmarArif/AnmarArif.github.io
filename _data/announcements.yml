@@ -1,0 +1,10 @@
+# Course announcements. Newest first.
+# course: ee484, ee202 or ee201
+# pinned: true keeps it at the top of the course page
+# Never post student names, IDs or grades here. Grades go on LMS only.
+
+- course: ee484
+  date: 2026-10-05
+  title: Course page is live
+  body: Public notes, notebooks and homework links for EE 484 will appear here. Slides and grades are on LMS.
+  pinned: false

@@ -1,0 +1,27 @@
+title: Anmar Arif
+description: Assistant Professor of Electrical Engineering at King Saud University. Power systems, optimization and electric railway power systems.
+author: Anmar Arif
+email: anarif@ksu.edu.sa
+url: "https://anmararif.github.io"
+baseurl: ""
+lang: en
+
+# Links shown in the profile card and footer
+links:
+  scholar: "https://scholar.google.com/citations?user=89RRG9oAAAAJ&hl=en"
+  linkedin: "https://www.linkedin.com/in/anmar-arif/"
+  github: "https://github.com/AnmarArif"
+  ksu: "https://faculty.ksu.edu.sa/en/anarif"
+  lms: "https://lms.ksu.edu.sa"
+  youtube: ""   # add your channel link when you have one
+
+permalink: /articles/:year/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - README.md
+  - EDITING.md
+  - vendor

@@ -1,0 +1,10 @@
+# Educational videos. Newest first.
+# youtube_id is the part after "v=" in the YouTube link.
+#
+# Example:
+# - title: Linear programming in 15 minutes
+#   youtube_id: dQw4w9WgXcQ
+#   length: 15 min
+#   course: ee484      # optional
+
+[]

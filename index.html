@@ -1,0 +1,129 @@
+---
+layout: default
+title: Home
+---
+{% assign prof = site.data.profile %}
+<main class="wrap two-col">
+
+  <aside class="side">
+    <div class="card tight profile">
+      <img src="{{ '/assets/img/anmar.jpg' | relative_url }}" alt="Anmar Arif" width="600" height="604">
+      <h1>Anmar Arif</h1>
+      <p class="role">{{ prof.position }}<br>{{ prof.department }}<br>{{ prof.university }}</p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      <div class="pill-links" style="margin-top:14px">
+        <a href="{{ site.links.scholar }}">Scholar</a>
+        <a href="{{ site.links.linkedin }}">LinkedIn</a>
+        <a href="{{ site.links.github }}">GitHub</a>
+        <a href="{{ site.links.ksu }}">KSU page</a>
+      </div>
+      <a class="btn" href="{{ '/cv/' | relative_url }}">CV and experience</a>
+    </div>
+    <div class="hours">
+      <div class="eyebrow">Office hours</div>
+      <dl>
+        {% for h in prof.office_hours %}<div><dt>{{ h.days }}</dt><dd>{{ h.time }}</dd></div>{% endfor %}
+      </dl>
+      <p>{{ prof.office }}<br>{{ prof.office_hours_note }}</p>
+    </div>
+  </aside>
+
+  <div class="main">
+    <section class="card" aria-labelledby="about">
+      <h2 id="about">About</h2>
+      <div class="prose">
+        <p>I am an Assistant Professor of Electrical Engineering at King Saud University. My work combines power systems with operations research. My main focus today is the power supply of electrified railways and metro systems.</p>
+        <p>Before joining KSU, I was an Academic Visitor at the University of Oxford and a Research Associate at the University of Manchester, where I worked on the EU Horizon 2020 project JUMP2Excel. I received my PhD in Electrical Engineering with a minor in Industrial Engineering from Iowa State University, my MSE from Arizona State University, and my BSc with first class honours from King Saud University.</p>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-h">
+      <h2 id="research-h" style="margin:0 0 16px;font-size:26px">Research interests</h2>
+      <div class="research-grid">
+        <article class="rcard feature">
+          <div class="art">{% include art/railway.svg %}</div>
+          <div class="body">
+            <span class="badge">Main focus</span>
+            <h3>Electric railway power systems</h3>
+            <p>Power supply for electrified rail and metro networks. Modelling, planning and operation, and how traction systems interact with the power grid.</p>
+          </div>
+        </article>
+        <article class="rcard">
+          {% include art/optimization.svg %}
+          <div class="body"><h3>Modelling and optimization</h3><p>Mathematical programming and decomposition methods for large engineering problems.</p></div>
+        </article>
+        <article class="rcard">
+          {% include art/resilience.svg %}
+          <div class="body"><h3>Planning and resilience</h3><p>Planning distribution networks and restoring them after extreme events.</p></div>
+        </article>
+        <article class="rcard">
+          {% include art/renewables.svg %}
+          <div class="body"><h3>Renewable energy integration</h3><p>Wind farm collector systems and integrating renewables, storage and electric vehicles.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="teaching-h">
+      <div class="section-head">
+        <h2 id="teaching-h">Teaching</h2>
+        <div class="chips" role="group" aria-label="Filter announcements" data-filter-for="#home-ann">
+          <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+          {% for c in site.data.courses %}<button class="chip" type="button" data-filter="{{ c.id }}" aria-pressed="false">{{ c.code }}</button>{% endfor %}
+        </div>
+      </div>
+      <div class="course-tiles">
+        {% for c in site.data.courses %}
+        <a class="course-tile" href="{{ '/teaching/' | append: c.id | append: '/' | relative_url }}">
+          <span class="code">{{ c.code }}</span>{% if c.new %} <span class="badge">New</span>{% endif %}
+          <span class="name">{{ c.title }}</span>
+        </a>
+        {% endfor %}
+      </div>
+      <div class="eyebrow">Announcements</div>
+      <div id="home-ann">
+        {% for a in site.data.announcements limit: 6 %}{% include announcement.html a=a show_course=true %}{% endfor %}
+        <p class="empty filter-empty"{% if site.data.announcements.size > 0 %} hidden{% endif %}>No announcements right now.</p>
+      </div>
+      <p class="small muted" style="margin:12px 0 0">Full slides and grades for registered students are on <a href="{{ site.links.lms }}">LMS</a>.</p>
+    </section>
+
+    <section class="card" aria-labelledby="pubs-h">
+      <div class="section-head">
+        <h2 id="pubs-h">Selected publications</h2>
+        <a href="{{ '/publications/' | relative_url }}">All publications</a>
+      </div>
+      <ol class="featured">
+        {% assign feat = site.data.publications | where: "featured", true %}
+        {% for p in feat %}
+        <li><span class="t">{{ p.title }}</span><br>
+          <span class="muted" style="font-size:15px">{{ p.authors }}. <i>{{ p.venue }}</i>, {{ p.year }}.</span>
+          <a class="small" href="https://doi.org/{{ p.doi }}">DOI</a>{% if p.code and p.code != "" %} · <a class="small" href="{{ p.code }}">Code</a>{% endif %}</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="card" aria-labelledby="students-h">
+      <div class="section-head">
+        <h2 id="students-h">Student research</h2>
+        <a href="{{ '/students/' | relative_url }}">All student work</a>
+      </div>
+      <p class="prose" style="margin:0">I supervise PhD, MS and Executive MS students, and undergraduate graduation projects (EE 496 and EE 497). Prospective graduate students interested in power systems, optimization or railway power supply are welcome to <a href="mailto:{{ site.email }}">email me</a> with a CV and a short note on their interests.</p>
+    </section>
+
+    <section class="card" aria-labelledby="learn-h">
+      <div class="section-head">
+        <h2 id="learn-h">Learn</h2>
+        <a href="{{ '/learn/' | relative_url }}">Videos and articles</a>
+      </div>
+      {% assign posts = site.posts | slice: 0, 3 %}
+      {% if site.data.videos.size > 0 or posts.size > 0 %}
+      <div class="article-list">
+        {% for v in site.data.videos limit: 2 %}<div><a href="https://www.youtube.com/watch?v={{ v.youtube_id }}">{{ v.title }}</a> <span class="small muted">· Video · {{ v.length }}</span></div>{% endfor %}
+        {% for post in posts %}<div><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="small muted">· Article · {{ post.date | date: "%b %Y" }}</span></div>{% endfor %}
+      </div>
+      {% else %}
+      <p class="empty">Short videos and tutorials with code are on the way.</p>
+      {% endif %}
+    </section>
+  </div>
+</main>

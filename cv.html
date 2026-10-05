@@ -1,0 +1,79 @@
+---
+layout: default
+title: CV
+nav: cv
+permalink: /cv/
+---
+<main class="wrap">
+  <div class="page-head">
+    <div>
+      <h1 class="page-title">Curriculum vitae</h1>
+      <p class="lede">Electrical engineering. Power systems and operations research.</p>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="{{ '/assets/files/Anmar_Arif_CV.pdf' | relative_url }}">Download CV (PDF)</a>
+      <a class="btn ghost" href="{{ site.links.linkedin }}">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="main" style="gap:24px">
+      <section class="card">
+        <h2>Experience</h2>
+        <div class="tl">
+          <div class="tl-row"><span class="when">2019 to now</span><div class="what"><strong>Assistant Professor</strong><span class="where">Department of Electrical Engineering, King Saud University</span></div></div>
+          <div class="tl-row"><span class="when">2021 to 2022</span><div class="what"><strong>Research Associate</strong><span class="where">Department of Electrical and Electronic Engineering, University of Manchester, UK. Advisor Prof. Jovica Milanovic.</span><p>Worked on the EU H2020 project JUMP2Excel on PV and battery storage integration. Studied the effects of electric vehicles and heat pumps on distribution systems.</p></div></div>
+          <div class="tl-row"><span class="when">2019 to 2021</span><div class="what"><strong>Academic Visitor</strong><span class="where">Department of Engineering Science, University of Oxford, UK. Advisor Dr. Kostas Margellos.</span><p>Locating parking hubs in free-floating ride share systems. Coordinating swappable battery charging with the distribution system.</p></div></div>
+          <div class="tl-row"><span class="when">2012 to 2013</span><div class="what"><strong>Research Assistant</strong><span class="where">Aramco Chair in Electrical Power, King Saud University. Advisor Prof. Imthias Ahamed.</span><p>Adaptive algorithms for scheduling electric vehicle charging.</p></div></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Education</h2>
+        <div class="tl">
+          <div class="tl-row"><span class="when">2015 to 2019</span><div class="what"><strong>PhD in Electrical Engineering, minor in Industrial Engineering</strong><span class="where">Iowa State University, USA. Advisor Dr. Zhaoyu Wang.</span><p>Dissertation. Distribution system outage management after extreme weather events.</p></div></div>
+          <div class="tl-row"><span class="when">2013 to 2015</span><div class="what"><strong>MSE in Electrical Engineering</strong><span class="where">Arizona State University, USA</span></div></div>
+          <div class="tl-row"><span class="when">2007 to 2012</span><div class="what"><strong>BSc in Electrical Engineering, First Class Honours</strong><span class="where">King Saud University, Saudi Arabia</span></div></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Funded projects</h2>
+        <div class="boxes">
+          <div class="box"><span class="eyebrow">EU Horizon 2020 · Grant 810809</span><strong>JUMP2Excel. Joint universal activities for Mediterranean PV integration excellence</strong><span class="small muted">Research Associate · May 2021 to March 2022</span></div>
+          <div class="box"><span class="eyebrow">U.S. Department of Energy · DE-EE0008956</span><strong>Optimal operation and impact assessment of distributed wind for rural electricity systems</strong><span class="small muted">Research Assistant · January 2020 to August 2023</span></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side" style="max-width:none;flex-basis:300px">
+      <section class="card tight">
+        <h2 style="font-size:19px;font-family:var(--sans)">Professional development</h2>
+        <div class="mini-list">
+          <div><span class="y">2026</span>Metro Rail Systems and Construction specialization, L&amp;T EduTech</div>
+          <div><span class="y">2020</span>IBM AI Engineering specialization</div>
+          <div><span class="y">2020</span>Reinforcement Learning specialization, University of Alberta</div>
+          <div><span class="y">2019</span>IBM Data Science Professional Certificate</div>
+          <div><span class="y">2019</span>Basic and Advanced Modeling for Discrete Optimization, University of Melbourne</div>
+        </div>
+        <p class="small muted" style="margin:12px 0 0">All through Coursera.</p>
+      </section>
+      <section class="card tight dark-card">
+        <h2 style="font-size:19px;font-family:var(--sans)">Honors and awards</h2>
+        <div class="mini-list">
+          <div><span class="y">2019</span>Research Excellence Award, Iowa State University</div>
+          <div><span class="y">2019</span>Student Research Award, King Saud University</div>
+          <div><span class="y">2018</span>Top 1% reviewers in Engineering, Publons</div>
+          <div><span class="y">2012</span>Best Research Project Award, Advanced Electronics Company and KSU</div>
+        </div>
+      </section>
+      <section class="card tight">
+        <h2 style="font-size:19px;font-family:var(--sans)">Tools</h2>
+        <div class="tags">
+          {% assign tools = "Python,MATLAB,R,Pyomo,Gurobi,AMPL,MiniZinc,OpenDSS,MATPOWER,LaTeX" | split: "," %}
+          {% for t in tools %}<span>{{ t }}</span>{% endfor %}
+        </div>
+      </section>
+    </aside>
+  </div>
+</main>

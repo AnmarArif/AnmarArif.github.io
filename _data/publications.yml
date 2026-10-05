@@ -1,0 +1,235 @@
+# Publications. Newest first. Add only published work.
+# type: journal or conference
+# tags (any of): railway, renewables, resilience, transportation, ev, ml
+# featured: true shows the paper on the home page (keep 3 to 4)
+# code: link to a GitHub repository, if you released code
+
+- title: "A multi-stage decomposition approach for wind farm cable layout optimization under uncertainty"
+  authors: "A. Arif"
+  venue: "Electric Power Systems Research"
+  details: "vol. 264, Art. no. 113845"
+  year: 2027
+  type: journal
+  doi: "10.1016/j.epsr.2026.113845"
+  code: ""
+  tags: [renewables]
+  featured: true
+
+- title: "Battery allocation and operation in integrated railway transportation and power network"
+  authors: "A. B. Batis, K. H. Alkhalid, A. I. Arif"
+  venue: "Proc. 8th Asia Energy and Electrical Engineering Symposium (AEEES)"
+  details: "pp. 736–740"
+  year: 2026
+  type: conference
+  doi: "10.1109/aeees69423.2026.11556858"
+  tags: [railway]
+  featured: true
+
+- title: "Temporary measures for distribution network restoration after natural disasters"
+  authors: "A. Arif"
+  venue: "Electric Power Systems Research"
+  details: "vol. 231"
+  year: 2026
+  type: journal
+  doi: "10.1016/j.epsr.2026.112788"
+  tags: [resilience]
+  featured: true
+
+- title: "Delay-dependent small-signal stability analysis of inverter-based islanded microgrids"
+  authors: "CT. Hassan, T. Mahmood Jadoon, A. Arif"
+  venue: "IET Smart Grid"
+  details: "vol. 8, no. 1"
+  year: 2025
+  type: journal
+  doi: "10.1049/stg2.12206"
+  tags: [renewables]
+
+- title: "Locating parking hubs in free-floating ride share systems via data-driven optimization"
+  authors: "A. Arif, K. Margellos"
+  venue: "IEEE Transactions on Intelligent Transportation Systems"
+  details: "vol. 23, no. 8, pp. 11621–11632"
+  year: 2022
+  type: journal
+  doi: "10.1109/tits.2021.3105579"
+  tags: [transportation]
+  featured: true
+
+- title: "Switching device-cognizant sequential distribution system restoration"
+  authors: "A. Arif, B. Cui, Z. Wang"
+  venue: "IEEE Transactions on Power Systems"
+  details: "vol. 37, no. 1, pp. 317–329"
+  year: 2022
+  type: journal
+  doi: "10.1109/tpwrs.2021.3097538"
+  tags: [resilience]
+
+- title: "Battery storage allocation in unbalanced distribution systems with EV demand uncertainty"
+  authors: "A. Arif, J. Milanovic"
+  venue: "Int. Conf. Probabilistic Methods Applied to Power Systems (PMAPS), Manchester"
+  details: "pp. 1–6"
+  year: 2022
+  type: conference
+  doi: "10.1109/pmaps53380.2022.9810571"
+  tags: [ev, renewables]
+
+- title: "Stochastic pre-event preparation for enhancing resilience of distribution systems with high DER penetration"
+  authors: "Q. Zhang, Z. Wang, S. Ma, A. Arif"
+  venue: "Renewable and Sustainable Energy Reviews"
+  details: "vol. 152"
+  year: 2021
+  type: journal
+  doi: "10.1016/j.rser.2021.111636"
+  tags: [resilience, renewables]
+
+- title: "Data-driven distribution system expansion planning considering high EV and PV penetration"
+  authors: "A. Arif, J. Milanovic"
+  venue: "IEEE PES Innovative Smart Grid Technologies Europe, Espoo"
+  details: "pp. 1–5"
+  year: 2021
+  type: conference
+  doi: "10.1109/isgteurope52324.2021.9639991"
+  tags: [ev, renewables]
+
+- title: "Repair and resource scheduling in unbalanced distribution systems using neighborhood search"
+  authors: "A. Arif, Z. Wang, C. Chen, J. Wang"
+  venue: "IEEE Transactions on Smart Grid"
+  details: "vol. 11, no. 1, pp. 673–685"
+  year: 2020
+  type: journal
+  doi: "10.1109/tsg.2019.2927739"
+  tags: [resilience]
+
+- title: "A stochastic multi-commodity logistic model for disaster preparation in distribution systems"
+  authors: "A. Arif, Z. Wang, C. Chen, B. Chen"
+  venue: "IEEE Transactions on Smart Grid"
+  details: "vol. 11, no. 1, pp. 565–576"
+  year: 2020
+  type: journal
+  doi: "10.1109/tsg.2019.2925620"
+  tags: [resilience]
+
+- title: "Optimizing service restoration in distribution systems with uncertain repair time and demand"
+  authors: "A. Arif, S. Ma, Z. Wang, J. Wang, S. M. Ryan, C. Chen"
+  venue: "IEEE Transactions on Power Systems"
+  details: "vol. 33, no. 6, pp. 6828–6838"
+  year: 2018
+  type: journal
+  doi: "10.1109/tpwrs.2018.2855102"
+  tags: [resilience]
+
+- title: "Load modeling. A review"
+  authors: "A. Arif, Z. Wang, J. Wang, B. Mather, H. Bashualdo, D. Zhao"
+  venue: "IEEE Transactions on Smart Grid"
+  details: "vol. 9, no. 6, pp. 5986–5999"
+  year: 2018
+  type: journal
+  doi: "10.1109/tsg.2017.2700436"
+  tags: []
+
+- title: "Power distribution system outage management with co-optimization of repairs, reconfiguration, and DG dispatch"
+  authors: "A. Arif, Z. Wang, J. Wang, C. Chen"
+  venue: "IEEE Transactions on Smart Grid"
+  details: "vol. 9, no. 5, pp. 4109–4118"
+  year: 2018
+  type: journal
+  doi: "10.1109/tsg.2017.2650917"
+  tags: [resilience]
+
+- title: "A novel MILP formulation for fault isolation and network reconfiguration in active distribution systems"
+  authors: "S. Ma, S. Li, Z. Wang, A. Arif, K. Ma"
+  venue: "IEEE PES General Meeting, Portland, OR"
+  details: "pp. 1–5"
+  year: 2018
+  type: conference
+  doi: "10.1109/pesgm.2018.8585927"
+  tags: [resilience]
+
+- title: "Distribution network outage data analysis and repair time prediction using deep learning"
+  authors: "A. Arif, S. Ma, Z. Wang"
+  venue: "IEEE Int. Conf. Probabilistic Methods Applied to Power Systems, Boise, ID"
+  details: "pp. 1–6"
+  year: 2018
+  type: conference
+  doi: "10.1109/pmaps.2018.8440354"
+  tags: [resilience, ml]
+
+- title: "Dynamic reconfiguration and fault isolation for a self-healing distribution system"
+  authors: "A. Arif, S. Ma, Z. Wang"
+  venue: "IEEE PES Transmission and Distribution Conf. and Expo., Denver, CO"
+  details: "pp. 1–5"
+  year: 2018
+  type: conference
+  doi: "10.1109/tdc.2018.8440481"
+  tags: [resilience]
+
+- title: "Networked microgrids for service restoration in resilient distribution systems"
+  authors: "A. Arif, Z. Wang"
+  venue: "IET Generation, Transmission & Distribution"
+  details: "vol. 11, no. 14, pp. 3612–3619"
+  year: 2017
+  type: journal
+  doi: "10.1049/iet-gtd.2017.0380"
+  tags: [resilience]
+
+- title: "Online decomposed optimal outage management after natural disasters"
+  authors: "A. Arif, S. Ma, Z. Wang"
+  venue: "IEEE PES General Meeting, Chicago, IL"
+  details: "pp. 1–5"
+  year: 2017
+  type: conference
+  doi: "10.1109/pesgm.2017.8273780"
+  tags: [resilience]
+
+- title: "Online scheduling of plug-in vehicles in dynamic pricing schemes"
+  authors: "A. Arif, M. Babar, T. P. I. Ahamed, E. Al-Ammar, P. H. Nguyen, I. G. R. Kamphuis, N. Malik"
+  venue: "Sustainable Energy, Grids and Networks"
+  details: "vol. 7, pp. 25–36"
+  year: 2016
+  type: journal
+  doi: "10.1016/j.segan.2016.05.001"
+  tags: [ev]
+
+- title: "Optimization of transmission system repair and restoration with crew routing"
+  authors: "A. Arif, S. Ma, Z. Wang"
+  venue: "IEEE North American Power Symposium (NAPS), Denver, CO"
+  details: "pp. 1–6"
+  year: 2016
+  type: conference
+  doi: "10.1109/naps.2016.7747949"
+  tags: [resilience]
+
+- title: "Service restoration in resilient power distribution systems with networked microgrid"
+  authors: "A. Arif, Z. Wang"
+  venue: "IEEE PES General Meeting, Boston, MA"
+  details: "pp. 1–5"
+  year: 2016
+  type: conference
+  doi: "10.1109/pesgm.2016.7741533"
+  tags: [resilience]
+
+- title: "Online adaptive algorithm for scheduling PEV charging"
+  authors: "A. Arif, T. P. I. Ahamed, N. Malik"
+  venue: "IEEE Int. Conf. Control Applications, Hyderabad"
+  details: "pp. 843–848"
+  year: 2013
+  type: conference
+  doi: "10.1109/cca.2013.6662855"
+  tags: [ev]
+
+- title: "Pursuit algorithm for scheduling PEV charging"
+  authors: "A. Arif, T. P. I. Ahamed, E. Al Ammar"
+  venue: "4th Int. Conf. Power Engineering, Energy and Electrical Drives, Istanbul"
+  details: "pp. 915–920"
+  year: 2013
+  type: conference
+  doi: "10.1109/powereng.2013.6635733"
+  tags: [ev]
+
+- title: "Experimental study and design of smart energy meter for the smart grid"
+  authors: "A. Arif, M. Al-Hussain, N. Al-Mutairi, E. Al-Ammar, Y. Khan, N. Malik"
+  venue: "IEEE Renewable and Sustainable Energy Conference (IRSEC), Ouarzazate"
+  details: "pp. 515–520"
+  year: 2013
+  type: conference
+  doi: "10.1109/irsec.2013.6529714"
+  tags: []
